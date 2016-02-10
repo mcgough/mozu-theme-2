@@ -1,0 +1,36 @@
+{
+	"folders":
+	[
+		{
+			"file_exclude_patterns":
+			[
+				"configure.js",
+				"LICENSE",
+				"README.md",
+				"*filelist",
+				"*.zip",
+				"*.base",
+				"thumb.*",
+				"theme*.json",
+				"*.*workspace"
+			],
+			"folder_exclude_patterns":
+			[
+				"admin/editors",
+				"compiled",
+				"node_modules",
+				"bower_components",
+        "templates/widgets",
+				"templates/email",
+				"scripts/widgets",
+				"stylesheets/widgets",
+				"references/backbone",
+				"references/bootstrap",
+				"references/jquery*",
+				"references/typeahead*",
+				"references/underscore"
+			],
+			"path": "."
+		}
+	]
+}

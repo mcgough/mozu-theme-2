@@ -1,0 +1,44 @@
+{
+  "id": "employee-card",
+  "displayName": "Employee Card",
+  "displayTemplate": "cms/employee-card",
+  "icon": "/resources/admin/widgets/employee-card.png",
+  "validPageTypes": [
+    "*"
+  ],
+  "defaultConfig": {
+    "xtype": "mz-input-text",
+    "maxWidth": 200
+  },
+  "editViewFields": [
+    {
+      "anchor": "93%",
+      "fieldLabel": "Employee Name",
+      "name": "employeeName",
+      "allowBlank": false
+    },
+    {
+      "anchor": "93%",
+      "fieldLabel": "Employee Title",
+      "name": "employeeTitle"
+    },
+    {
+      "anchor": "93%",
+      "fieldLabel": "Employee Bio",
+      "name": "employeeBio",
+      "xtype": "mz-input-textarea",
+      "maxLength": 400
+    },
+    {
+      "fieldLabel": "Image Max Width",
+      "name": "maxWidth",
+      "allowBlank": false
+    },
+    {
+      "fieldLabel": "Employee Image",
+      "name": "employeeImage",
+      "xtype": "mz-input-image",
+      "dataFormat": "urlOnly"
+    }
+  ]
+}

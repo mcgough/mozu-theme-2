@@ -1,0 +1,18 @@
+{
+	"id": "photo-slider",
+	"displayName": "Photo Slider",
+	"displayTemplate": "cms/photo-slider",
+	"icon": "/resources/admin/widgets/10_photo_slider.png",
+	"validPageTypes": [
+		"*"
+	],
+
+	"defaultConfig": {
+		"anchor": "100%",
+		"xtype": "mz-input-checkbox"
+	},
+
+	"editViewFields": [
+
+	]
+}

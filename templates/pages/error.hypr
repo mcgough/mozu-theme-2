@@ -1,4 +1,4 @@
-﻿{% extends "page" %}
+{% extends "page" %}
 
 {% block title-tag-content %}{% firstof pageContext.metaTitle labels.errorDetail %} - {% parent %}{% endblock title-tag-content %}
 
@@ -6,9 +6,9 @@
 
 {% block body-content %}
 <div class="mz-l-container">
-    <div class="mz-errordetail">
-        <h2 class="mz-errordetail-header">{{ labels.errorDetail }}</h2>
-        <p class="mz-errordetail-text">{{model.message}}</p>
+		<div class="mz-errordetail">
+				<h2 class="mz-errordetail-header">{{ labels.errorDetail }}</h2>
+				<p class="mz-errordetail-text">{{ model.message }}</p>
 		{% if pageContext.isDebugMode %}
 			<a href="javascript:;" id="stacktrace-link" class="mz-errordetail-expander">{{ labels.stackTrace }}</a>
 			<blockquote class="mz-errordetail-stacktrace">
@@ -16,7 +16,7 @@
 				<pre><code>{% dump model %}</code></pre>
 			</blockquote>
 		{% endif %}
-    </div>
+		</div>
 </div>
 {% require_script "pages/error" %}
 {% endblock body-content %}

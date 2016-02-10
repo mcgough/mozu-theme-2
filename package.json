@@ -1,28 +1,11 @@
 {
-  "name": "redington-mozu-theme",
-  "author": {
-    "name": "Dan McGough",
-    "email": "mcgough.dan@gmail.com"
-  },
+  "name": "demo-theme",
+  "version": "1.0.5",
   "description": "",
-  "version": "0.1.0",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/mozu/core-theme.git"
-  },
-  "devDependencies": {
-    "grunt": "^0.4.5",
-    "grunt-contrib-compress": "^0.14.0",
-    "grunt-contrib-copy": "^0.8.2",
-    "grunt-contrib-jshint": "^0.11.3",
-    "grunt-contrib-watch": "^0.6.1",
-    "grunt-mozu-appdev-sync": "^2.2.0",
-    "grunt-newer": "^1.1.1",
-    "mozu-theme-helpers": "^1.3.2",
-    "time-grunt": "^1.3.0"
-  },
+  "repository": "https://github.com/bmcminn/mozu-demo-theme",
+  "license": "MIT",
   "engines": {
-    "node": ">=0.10"
+    "node": ">=4.0"
   },
   "dependencies": {
     "backbone": "1.1.2",
@@ -32,6 +15,26 @@
     "typeahead.js": "0.10.5",
     "underscore": "1.6.0"
   },
+  "devDependencies": {
+    "chalk": "^1.1.1",
+    "grunt": "^0.4.5",
+    "grunt-contrib-compress": "^0.14.0",
+    "grunt-contrib-copy": "^0.8.2",
+    "grunt-contrib-imagemin": "^0.9.4",
+    "grunt-contrib-jshint": "^0.11.3",
+    "grunt-contrib-less": "^1.0.1",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-jsbeautifier": "^0.2.10",
+    "grunt-juice-email": "^0.1.3",
+    "grunt-mozu-appdev-sync": "^2.1.0",
+    "grunt-newer": "^1.1.1",
+    "less": "^2.5.1",
+    "load-grunt-config": "^0.17.2",
+    "lodash": "^3.5.0",
+    "mozu-theme-helpers": "^1.3.2",
+    "semver": "^5.0.1",
+    "time-grunt": "^1.2.2"
+  },
   "exportsOverride": {
     "bootstrap": [
       "js/affix.js",
@@ -40,5 +43,24 @@
       "js/scrollspy.js"
     ]
   },
-  "license": "UNLICENSED"
+  "jshintConfig": {
+    "laxbreak": true,
+    "laxcomma": true,
+    "es3": true,
+    "browser": true,
+    "undef": true,
+    "nonstandard": true,
+    "globals": {
+      "console": true,
+      "V": true,
+      "exports": true,
+      "JSON": true,
+      "define": true,
+      "require": true,
+      "Modernizr": true,
+      "process": true,
+      "module": true,
+      "order": true
+    }
+  }
 }

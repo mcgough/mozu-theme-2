@@ -1,14 +1,18 @@
 {% extends "page" %}
 
+{# HEAD > TITLE TAG #}
 {% block title-tag-content %}{% firstof pageContext.metaTitle model.name %}  - {% parent %}{% endblock title-tag-content %}
 
+
+{# BODY > CLASSES #}
 {% block body-tag-classes %} mz-category {% endblock body-tag-classes %}
 
+
+{# BODY > CONTENT CONTAINER #}
 {% block body-content %}
+	{% require_script "pages/category" %}
 
-{% require_script "pages/category" %}
-
-<div data-mz-category="{{model.categoryId}}" class="mz-l-container">
-    {% include "pages/category-interior" %}
-</div>
+	<div data-mz-category="{{ model.categoryId }}" class="mz-l-container">
+		{% include "pages/category-interior" %}
+	</div>
 {% endblock body-content %}

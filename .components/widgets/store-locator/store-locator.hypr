@@ -1,0 +1,8 @@
+{% if not model.config %}
+    <div>Nothing is here</div>
+{% else %}
+    <div class="mz-cms-store-locator" data-url="{{ model.config.url }}"{% if pageContext.IsEditMode %} data-edit="true"{% endif %}>
+         Something is here
+    </div>
+{% endif %}
+{% require_script "widgets/store-locator" %}

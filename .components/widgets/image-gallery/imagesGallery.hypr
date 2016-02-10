@@ -1,0 +1,65 @@
+{% require_script "modules/images-gallery" %}
+
+<div class="mz-image-gallery mz-{{ model.config.type }} mz-align-{{ model.config.alignment }}"
+
+    {% if model.config.type == "carousel" %}
+        data-autoplay="{{ model.config.autoplayCarousel }}" data-delay="{{ model.config.delay }}"
+    {% endif %}
+
+    {% if model.config.type == "slider" %}
+        data-autoplay="{{ model.config.autoplaySlider }}" data-slider-columns="{{ model.config.sliderColumns }}"
+    {% endif %}
+
+    {% if model.config.type == "grid" %}
+        data-lightbox="{{ model.config.lightbox }}"
+    {% endif %}
+
+    >
+
+
+    {% if model.config.type == "carousel" or model.config.type == "slider" %}
+        <div class="mz-carousel-wrapper">
+            <ul class="mz-bjqs">
+                {% for image in model.config.images %}
+
+                    <li>
+                        <a href="/admin/img/files/{{ image.id }}">
+                            <img src="/admin/img/files/{{ image.id }}" alt="{{ image.alt }}" />
+                        </a>
+                    </li>
+
+                {% endfor %}
+            </ul>
+        </div>
+
+    {% if model.config.type == "carousel" and model.config.showThumbnails %}
+
+        <div class="mz-thumbnails">
+            {% for image in model.config.images %}
+                {% if forloop.counter0 != 0 and forloop.counter0|divisibleby:4 %}
+                    <br>
+                {% endif %}
+
+                <a href="/admin/img/files/{{ image.id }}">
+                    <img src="/admin/img/files/{{ image.id }}" alt="{{ image.alt }}" />
+                </a>
+            {% endfor %}
+        </div>
+
+    {% endif %}
+
+    {% else %}{% if model.config.type == "grid" %}
+
+        {% for image in model.config.images %}
+            {% if forloop.counter0 != 0 and forloop.counter0|divisibleby:4 %}
+                <br>
+            {% endif %}
+
+            <a href="/admin/img/files/{{ image.id }}">
+                <img src="/admin/img/files/{{ image.id }}" alt="{{ image.alt }}" />
+            </a>
+        {% endfor %}
+
+    {% endif %}{% endif %}
+
+</div>

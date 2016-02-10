@@ -1,29 +1,47 @@
-﻿  {% extends "email/email" %}
+{% extends "email/email" %}
 
-  {% block body-content %}
-    <br>
+{% block body-content %}
+  <br>
 
-	{{ labels.giftCardEmailBanner|string_format(domainName)|safe}}
+  {{ labels.giftCardEmailBanner|string_format(domainName)|safe }}
 
-	<p>
-	{% if model.Order.billingInfo.billingContact.firstName %}
-		{{ labels.giftCardEmailGreeting|string_format(model.Order.billingInfo.billingContact.firstName, model.Order.billingInfo.billingContact.lastNameOrSurname)|safe }}
-	{% else %}
-		{{ labels.emailOpeningAlternative|safe }}
-	{% endif %}
-	</p>
+  <p style="margin: 0; color: #222222; font-family: 'Helvetica','Arial',sans-serif; font-weight: normal; padding: 0; text-align: left; line-height: 19px; font-size: 14px; margin-bottom: 0;">
+    {% with model.Order.billingInfo.billingContact as billingContact %}
 
-	{{ labels.giftCardEmailIntro|string_format(siteContext.generalSettings.websiteName)|safe }}
-	
-	{{ labels.giftCardEmailImage|string_format(domainName)|safe}}
+      {% if billingContact.firstName %}
+        {{ labels.giftCardEmailGreeting|string_format(billingContact.firstName, billingContact.lastNameOrSurname)|safe }}
 
-	<p><b>{{ labels.giftCardEmailAmount }}</b> <span class="mz-price">{{model.Credit.CurrentBalance|currency}}</span></p>
-    <p><b>{{ labels.giftCardEmailClaimCode }}</b> {{model.Credit.Code}}</p>
+      {% else %}
+        {{ labels.emailOpeningAlternative|safe }}
 
-	{{ labels.giftCardEmailInstructions|string_format(domainName)|safe }}
+      {% endif %}
 
-	{{ labels.giftCardEmailClosing|string_format(domainName)|safe }}
+    {% endwith %}
+  </p>
 
+  {{ labels.giftCardEmailIntro|string_format(siteContext.generalSettings.websiteName)|safe }}
+
+  {{ labels.giftCardEmailImage|string_format(domainName)|safe }}
+
+  <p style="margin: 0; color: #222222; font-family: 'Helvetica','Arial',sans-serif; font-weight: normal; padding: 0; text-align: left; line-height: 19px; font-size: 14px; margin-bottom: 0;">
+    <b>{{ labels.giftCardEmailAmount }}</b> <span class="mz-price">{{ model.Credit.CurrentBalance|currency }}</span>
+  </p>
+
+  <p style="margin: 0; color: #222222; font-family: 'Helvetica','Arial',sans-serif; font-weight: normal; padding: 0; text-align: left; line-height: 19px; font-size: 14px; margin-bottom: 0;">
+    <b>{{ labels.giftCardEmailClaimCode }}</b> {{ model.Credit.Code }}
+  </p>
+
+  <p style="margin: 0; color: #222222; font-family: 'Helvetica','Arial',sans-serif; font-weight: normal; padding: 0; text-align: left; line-height: 19px; font-size: 14px; margin-bottom: 0;">
+    {{ labels.giftCardEmailInstructions|string_format(domainName)|safe }}
+  </p>
+
+  <p style="margin: 0; color: #222222; font-family: 'Helvetica','Arial',sans-serif; font-weight: normal; padding: 0; text-align: left; line-height: 19px; font-size: 14px; margin-bottom: 0;">
+    {{ labels.giftCardEmailClosing|string_format(domainName)|safe }}
+  </p>
+
+
+  <p style="margin: 0; color: #222222; font-family: 'Helvetica','Arial',sans-serif; font-weight: normal; padding: 0; text-align: left; line-height: 19px; font-size: 14px; margin-bottom: 0;">
     {{ labels.emailClosing|string_format(siteContext.generalSettings.websiteName)|safe }}
+  </p>
 
 {% endblock body-content %}

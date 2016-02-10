@@ -1,0 +1,24 @@
+
+<div class="mz-employee-card" data-widget-data="{% json_attribute model %}">
+  <div class="mz-row">
+
+		{% with model.config as config %}
+
+	    <img class="mz-employee-image" src="{% make_url "image" config.employeeImage %}?max={{ config.maxWidth }}" alt="">
+
+	    <h3 class="mz-employee-name">{{ config.employeeName }}</h3>
+
+	    {% if config.employeeTitle %}
+	    	<span class="mz-employee-title">{{ config.employeeTitle }}</span>
+	    {% endif %}
+
+	    {% if config.employeeBio %}
+	      <p class="mz-employee-bio">
+	      	{{ config.employeeBio }}
+	      </p>
+	    {% endif %}
+
+		{% endwith %}
+
+  </div>
+</div>

@@ -1,0 +1,88 @@
+
+@import "/stylesheets/base/colors.less";
+@import "/stylesheets/base/variables.less";
+@import "/stylesheets/base/mixins.less";
+@import "/stylesheets/debug.less";
+@import "/stylesheets/modules/soft-cart.less";
+@import "/stylesheets/widgets/employee-card.less";
+
+
+//
+// Layout overrides
+//
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.mz-l-pagecontent {
+  background-color: @white;
+  max-width: 1220px;
+  margin: 0 auto;
+}
+
+
+//
+// Product category overrides
+//
+
+.mz-productlist-item {
+  height: 400px;
+  padding: 0 1rem 1rem 0;
+}
+
+
+.mz-productlisting {
+
+  .mz-productlisting-info {
+    margin-top: 1rem;
+  }
+}
+
+
+.mz-productlisting-image {
+  background-color: @white;
+  border: 1px solid @gray-light;
+
+  a {
+    display: block;
+    width: 100%;
+
+    img {
+      display: block;
+      max-width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}
+
+
+.fade-in {
+  opacity: 1;
+}
+
+
+// GRID FIXES FOR WIERD NON-STANDARD SPAN SIZES
+.mz-cms-col-16-16 {
+    width: 100%;
+}
+
+
+
+// fixes for image widget
+.mz-cms-content {
+  height: auto !important;
+
+  img {
+    display: inline-block;
+    width: 100%;
+  }
+}
+
+
+
+h1, h2, h3, h4, h5, h6 {
+  text-transform: capitalize;
+}

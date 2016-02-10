@@ -9,7 +9,7 @@
 
 {% require_script "pages/category" %}
 
-<div data-mz-category="{{model.categoryId}}" class="mz-l-container">
+<div data-mz-category="{{ model.categoryId }}" class="mz-l-container">
     <h1 class="mz-pagetitle">parent cat{{ model.name }}</h1>
 	{% dropzone "parent-category-page-top" scope="page" %}
 	{# todo list of child cats #}

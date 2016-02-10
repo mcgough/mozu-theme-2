@@ -1,0 +1,30 @@
+{% extends "page" %}
+
+
+{% block title-tag-content %}
+	{{ pageContext.title }} - {% parent %}
+{% endblock title-tag-content %}
+
+
+{% block body-tag-classes %} mz-company-info mz-page {% endblock body-tag-classes %}
+
+
+{% block body-content %}
+
+	{# <div>{{ model.properties.blurb|safe }}</div> #}
+
+	<div class="mz-page-body mz-company-info-body">
+		{% dropzone "company-info~page-body" scope="page" %}
+	</div>
+
+	<div class="mz-page-footer mz-company-info-footer">
+		{% dropzone "company-info~template-footer" scope="template" %}
+	</div>
+
+	{# {% dropzone "company-info~site-body" scope="site" span=16 %} #}
+
+{% endblock body-content %}
+
+
+{% block body-below-content %}
+{% endblock body-below-content %}

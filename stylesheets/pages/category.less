@@ -1,3 +1,79 @@
-﻿.mz-category {
-
+﻿.category-title-container {
+  position: relative;
+  border-bottom: 1px solid #ccc;
+  margin: 40px 0 40px 0;
+  padding: 0 0 8px 0;
+  .mz-pagetitle {
+    margin: 0;
+  }
+  .button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-family: PNRegular, "Helvetica Neue", Helvetica,
+  }
+}
+.mz-l-paginatedlist {
+  position: relative;
+  float: right;
+  width: 85%;
+  overflow: hidden;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0 0 20px 0;
+  text-align: center;
+  .mz-productlist-item {
+    display: inline-block;
+    overflow: hidden;
+    text-decoration: none;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 222px;
+    height: 420px;
+    margin: 0 0 40px 61px;
+    padding: 0 5px 0 5px;
+    border: 1px solid transparent;
+    -webkit-transition: border 0.1s linear;
+    -moz-transition: border 0.1s linear;
+    transition: border 0.1s linear;
+    &:hover {
+      border: 1px solid #ccc;
+    }
+    .mz-productlisting-image img {
+      display: block;
+      width: 190px;
+      height: 275px;
+      margin: 0 auto 20px auto;
+    }
+    .mz-productlisting-title {
+      text-align: center;
+      line-height: 1;
+      font-size: 20px;
+      font-family: PNMedium, "Helvetica Neue", Helvetica, Arial, sans-serif;
+      text-transform: uppercase;
+      -webkit-font-smoothing: antialiased !important;
+      -webkit-text-size-adjust: 100%;
+      text-rendering: optimizeLegibility !important;
+      font-weight: normal;
+      -moz-osx-font-smoothing: grayscale;
+      color: #000;
+    }
+    .mz-pricestack {
+      max-width: 70px;
+      text-align: center;
+      margin: 10px auto 0 auto;
+      line-height: 30px;
+      border-top: 1px solid #ccc;
+      font-family: PNMedium, "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 14px;
+      color: #000;
+      -webkit-font-smoothing: antialiased !important;
+      -webkit-text-size-adjust: 100%;
+      text-rendering: optimizeLegibility !important;
+      font-weight: normal;
+      -moz-osx-font-smoothing: grayscale;
+    }
+  }
 }

@@ -1,0 +1,18 @@
+<div class="mobile-nav">
+  <div class="mobile-header-links">
+    <a href="/user/login" class="sign-in">Sign In</a>
+    <a href="/user/signup" class="register">Register</a>
+  </div>
+  <nav id="categories">
+    {% partial_cache %}
+      {% for link in navigation.tree %}
+        {% if not link.isHidden and forloop.counter0 < themeSettings.maxTopLevelNavItems %}
+          <a href="{{link.url}}">{{ link.name|safe }}</a>
+        {% endif %}
+      {% endfor %}
+    {% endpartial_cache %}
+  </nav>
+  {% block mobile-footer %}
+    {% include "modules/mobile-footer/mobile-footer" %}
+  {% endblock mobile-footer %}
+</div>

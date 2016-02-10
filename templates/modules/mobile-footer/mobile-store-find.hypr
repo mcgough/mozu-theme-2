@@ -1,0 +1,6 @@
+<form id="store-quick-find" method="get" action="/dealer_locator.php">
+  <label for="zipcode">Find a store:</label>
+  <input type="text" id="zipcode" name="address" placeholder="City, state or zipcode">
+  <input type="submit" value="»">
+  <div class="arrow-submit">&nbsp;</div>
+</form>

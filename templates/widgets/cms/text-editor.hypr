@@ -1,0 +1,10 @@
+<div class="mz-content-widget-wrap" >
+	{# <div class="mz-content-widget-inner-wrap"> #}
+
+	<div class="mz-content-widget-inner-wrap">
+    {% if model.config.body %}
+      {{ model.config.body|default_edit(labels.addContentHere)|safe }}
+    {% else %}
+    {% endif %}
+  </div>
+</div>

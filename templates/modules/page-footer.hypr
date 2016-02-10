@@ -1,11 +1,47 @@
-﻿<footer class="mz-pagefooter">
-    {% dropzone "footer" scope="site" %}
-    <div class="mz-pagefooter-copyright" id="copyright">
-        <span class="mz-pagefooter-copyrighttext">
-            &copy; {% now "Y" %} {{ siteContext.generalSettings.websiteName }}. {{ labels.allRightsReserved }}
-        </span> 
-        <span class="mz-pagefooter-poweredby">
-             {{ labels.poweredBy }}
-        </span>
+﻿<footer class="mz-pagefooter non-mobile">
+  {% dropzone "footer" scope="site" %}
+  <div class="line1">
+    <nav id="customer-links">
+      <a href="/support/">Customer Service</a>
+      <a href="/support/warranty/">Warranty</a>
+      <a href="/about/our-story/">About</a>
+      <a href="http://farbank.applicantpro.com/" target="_blank">Careers</a>
+      <a href="/support/contact-us/">Contact Us</a>
+      <a href="/videos/">Videos</a>
+    </nav>
+    <form id="store-quick-find" method="get" action="/dealer_locator.php">
+      <label for="zipcode">Find a store:</label>
+      <input type="text" id="zipcode" name="address" placeholder="City, state or zipcode">
+      <input type="submit" value="»">
+      <div class="arrow-submit">&nbsp;</div>
+    </form>
+    <nav id="social-links">
+      <a class="tw-link" target="_blank" href="https://twitter.com/RedingtonGear">Check out our twitter</a>
+      <a class="fb-link" target="_blank" href="https://www.facebook.com/RedingtonGear">Check out our facebook page</a>
+      <a class="vimeo-link" target="_blank" href="https://vimeo.com/user38207009">Check out our vimeo page</a>
+      <a class="instagram-link" target="_blank" href="http://instagram.com/redingtongear">Check out our instagram</a>
+    </nav>
+  </div>
+  <div class="mailchimp">
+    <link href="//cdn-images.mailchimp.com/embedcode/slim-081711.css" rel="stylesheet" type="text/css">
+    <div id="mc_embed_signup">
+      <form action="//sageflyfish.us7.list-manage.com/subscribe/post?u=0bceee6ad53d757b2ab3944fd&amp;id=24046c7db6" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate="">
+        <label for="mce-EMAIL">Subscribe to our newsletter:</label>
+        <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required="">
+        <div style="position: absolute; left: -5000px;"><input type="text" name="b_0bceee6ad53d757b2ab3944fd_24046c7db6" tabindex="-1" value=""></div>
+        <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
+        <div class="arrow-submit">&nbsp;</div>
+      </form>
     </div>
+  </div>
+  <div class="mz-pagefooter-copyright" id="copyright">
+    <span class="mz-pagefooter-copyrighttext">
+      &copy; 1992-2016 {{ siteContext.generalSettings.websiteName }}&nbsp;&nbsp;|&nbsp;&nbsp;A division of Far Bank Enterprises&nbsp;&nbsp;|&nbsp;&nbsp;<a href="/support/privacy/">Privacy Policy</a>&nbsp;&nbsp;<a href="/terms-conditions/">Terms of Service</a>&nbsp;&nbsp;
+    </span>
+    {% comment %}
+    <span class="mz-pagefooter-poweredby">
+         {{ labels.poweredBy }}
+    </span>
+    {% endcomment %}
+  </div>
 </footer>

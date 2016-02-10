@@ -1,0 +1,21 @@
+<div id="mobile-header" class="mobile">
+  <div class="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <div class="logo">
+    <a href="/"><img id="main_logo" src="../resources/images/sprite-sheets/spacer.gif" alt="Logo Placeholder"></a>
+  </div>
+  <div class="cart">
+    <a class="cart" href="{% make_url "cart" %}">
+    {# {{ labels.viewCart }}  #}<span class="mz-cartmonitor" data-mz-role="cartmonitor">0</span>
+    {% require_script "modules/cart-monitor" %}
+    </a>
+  </div>
+  {% block mobile-nav-links %}
+    {% include "modules/page-header/mobile-nav-links" %}
+  {% endblock mobile-nav-links %}
+
+  {% require_script "pages/mobilenav" %}
+</div>

@@ -1,0 +1,11 @@
+<nav id="customer-links">
+  <a href="/support/">Customer Service</a>
+  <a href="/support/warranty/">Warranty</a>
+  <a href="/about/our-story/">About</a>
+  <a href="http://farbank.applicantpro.com/" target="_blank">Careers</a>
+  <a href="/support/contact-us/">Contact Us</a>
+  <a href="/videos/">Videos</a>
+</nav>
+<span class="mz-pagefooter-copyrighttext">
+  &copy; 1992-2016 {{ siteContext.generalSettings.websiteName }}&nbsp;&nbsp;|&nbsp;&nbsp;A division of Far Bank Enterprises&nbsp;&nbsp;
+</span>

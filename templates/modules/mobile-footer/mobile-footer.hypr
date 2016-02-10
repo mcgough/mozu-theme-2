@@ -1,0 +1,17 @@
+  <div id="footer" class="mobile">
+    {% block mobile-search %}
+      {% include "modules/mobile-footer/mobile-search" %}
+    {% endblock mobile-search %}
+    {% block store-quick-find %}
+      {% include "modules/mobile-footer/mobile-store-find" %}
+    {% endblock store-quick-find %}
+    {% block mobile-mailchimp %}
+      {% include "modules/mobile-footer/mobile-mailchimp" %}
+    {% endblock %}
+    {% block mobile-footer-nav-links %}
+      {% include "modules/mobile-footer/mobile-footer-nav-links" %}
+    {% endblock mobile-footer-nav-links %}
+    {% block mobile-footer-social %}
+      {% include "modules/mobile-footer/mobile-footer-social" %}
+    {% endblock mobile-footer-social %}
+  </div>

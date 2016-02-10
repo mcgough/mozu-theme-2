@@ -1,47 +1,82 @@
-<footer class="mz-pagefooter non-mobile">
-  {% dropzone "footer" scope="site" %}
-  <div class="line1">
-    <nav id="customer-links">
-      <a href="/support/">Customer Service</a>
-      <a href="/support/warranty/">Warranty</a>
-      <a href="/about/our-story/">About</a>
-      <a href="http://farbank.applicantpro.com/" target="_blank">Careers</a>
-      <a href="/support/contact-us/">Contact Us</a>
-      <a href="/videos/">Videos</a>
+    <nav class="mz-sitenav non-mobile">
+        <ul class="mz-sitenav-list"
+            data-mz-contextify='.mz-sitenav-link[href="{{ navigation.currentNode.url }}"]'
+            data-mz-contextify-attr='class'
+            data-mz-contextify-val='is-current'>
+            {% partial_cache %}
+            {% for link in navigation.tree %}
+            {% if not link.isHidden and forloop.counter0 < themeSettings.maxTopLevelNavItems %}
+            <li class="mz-sitenav-item">
+              <div class="mz-sitenav-item-inner">
+                <a class="mz-sitenav-link" href="{{link.url}}">{{link.name|truncatechars(themeSettings.maxTopLevelNavLabelLength)|safe}}</a>
+                {% if link.items %}
+                <ul class="mz-sitenav-sub">
+                  {% for sublink in link.items %}
+                        {% if not sublink.isHidden and not sublink.isEmpty %}
+                  <li data-mz-role="sitemenu-item" class="mz-sitenav-item">
+                    <a class="mz-sitenav-link" href="{{sublink.url}}">{{ sublink.name|safe }}</a>
+                    {%comment%}
+                    <!-- uncoment out  this block to get 3rd laver of nav -->
+                    {% if sublink.items %}
+                    <ul class="mz-sitenav-sub-sub">
+                      {% for subsublink in sublink.items %}
+                                {% if not subsublink.isHidden and not subsublink.isEmpty %}
+                      <li class="mz-sitenav-item">
+                              <a class="mz-sitenav-link" href="{{subsublink.url}}">{{ subsublink.name|safe }}</a>
+                      </li>
+                                {% endif %}
+                      {% endfor %}
+                    </ul>
+                    {% endif %}
+                    {%endcomment%}
+                  </li>
+                        {% endif %}
+                  {% endfor %}
+                </ul>
+                {% endif %}
+              </div>
+                </li>
+                {% endif %}
+            {% endfor %}
+            {% if navigation.tree.length > themeSettings.maxTopLevelNavItems %}
+            <li class="mz-sitenav-item mz-sitenav-item-more">
+                <div class="mz-sitenav-item-inner">
+                    <a class="mz-sitenav-link" href="javascript:;">{{ labels.navMore }}</a>
+                    <ul class="mz-sitenav-sub">
+                        {% for sublink in navigation.tree %}
+                        {% if sublink.index >= themeSettings.maxTopLevelNavItems and not sublink.isHidden and not sublink.isEmpty %}
+                            <li data-mz-role="sitemenu-item" class="mz-sitenav-item">
+                                    <a class="mz-sitenav-link" href="{{sublink.url}}">{{sublink.name|safe}}</a>
+                                  {% if sublink.items %}
+                            {% comment %}
+                            <!-- uncomment out  this block to get 3rd laver of nav -->
+                                           <ul class="mz-sitenav-sub-sub">
+                                                {% for subsublink in sublink.items %}
+                                {% if not subsublink.isHidden and not subsublink.isEmpty %}
+                                                    <li class="mz-sitenav-item">
+                                                        <a class="mz-sitenav-link" href="{{subsublink.url}}">{{subsublink.name|safe}}</a>
+                                                    </li>
+                                {% endif %}
+                                                {% endfor %}
+                                            </ul>
+                            {% endcomment %}
+                                  {% endif %}
+                                </li>
+                            {% endif %}
+                        {% endfor %}
+                    </ul>
+                </div>
+            </li>
+            {% endif %}
+            {% endpartial_cache %}
+            {% require_script "modules/contextify" %}
+            {% require_script "pages/header" %}
+        </ul>
     </nav>
-    <form id="store-quick-find" method="get" action="/dealer_locator.php">
-      <label for="zipcode">Find a store:</label>
-      <input type="text" id="zipcode" name="address" placeholder="City, state or zipcode">
-      <input type="submit" value="»">
-      <div class="arrow-submit">&nbsp;</div>
-    </form>
-    <nav id="social-links">
-      <a class="tw-link" target="_blank" href="https://twitter.com/RedingtonGear">Check out our twitter</a>
-      <a class="fb-link" target="_blank" href="https://www.facebook.com/RedingtonGear">Check out our facebook page</a>
-      <a class="vimeo-link" target="_blank" href="https://vimeo.com/user38207009">Check out our vimeo page</a>
-      <a class="instagram-link" target="_blank" href="http://instagram.com/redingtongear">Check out our instagram</a>
-    </nav>
-  </div>
-  <div class="mailchimp">
-    <link href="//cdn-images.mailchimp.com/embedcode/slim-081711.css" rel="stylesheet" type="text/css">
-    <div id="mc_embed_signup">
-      <form action="//sageflyfish.us7.list-manage.com/subscribe/post?u=0bceee6ad53d757b2ab3944fd&amp;id=24046c7db6" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate="">
-        <label for="mce-EMAIL">Subscribe to our newsletter:</label>
-        <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required="">
-        <div style="position: absolute; left: -5000px;"><input type="text" name="b_0bceee6ad53d757b2ab3944fd_24046c7db6" tabindex="-1" value=""></div>
-        <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
-        <div class="arrow-submit">&nbsp;</div>
-      </form>
-    </div>
-  </div>
-  <div class="mz-pagefooter-copyright" id="copyright">
-    <span class="mz-pagefooter-copyrighttext">
-      &copy; 1992-2016 {{ siteContext.generalSettings.websiteName }}&nbsp;&nbsp;|&nbsp;&nbsp;A division of Far Bank Enterprises&nbsp;&nbsp;|&nbsp;&nbsp;<a href="/support/privacy/">Privacy Policy</a>&nbsp;&nbsp;<a href="/terms-conditions/">Terms of Service</a>&nbsp;&nbsp;
-    </span>
-    {% comment %}
-    <span class="mz-pagefooter-poweredby">
-         {{ labels.poweredBy }}
-    </span>
-    {% endcomment %}
-  </div>
-</footer>
+    {% block minimal %}
+      {% include "modules/page-header/minimal-header" %}
+    {% endblock minimal %}
+</div>
+{% block mobile-nav %}
+  {% include "modules/page-header/mobile-nav" %}
+{% endblock mobile-nav %}

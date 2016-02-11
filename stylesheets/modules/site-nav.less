@@ -1,17 +1,25 @@
 ﻿.mz-sitenav {
     @navHeight: 37px;
-    width: 100%;
-    background: #666;
+    max-width: 1012px;
+    margin: auto;
     height: @navHeight;
     overflow: visible;
+    text-transform: uppercase;
+    position: relative;
+    bottom: 43%;
+    left: 17px;
+    width: 90%;
     .clearfix();
 
-    > .mz-sitenav-list {
-        display: table-row;
-        > .mz-sitenav-item:first-child {
-            padding-left: @gutter * .75;
-        }
-    } 
+    // > .mz-sitenav-list {
+    //     display: table-row;
+    //     > .mz-sitenav-item:first-child {
+    //         padding-left: @gutter * .75;
+    //     }
+    // }
+    .mz-sitenav-list {
+
+    }
 
     .mz-sitenav-item {
         display: table-cell;
@@ -22,7 +30,7 @@
         .mz-sitenav-item-inner {
             position: relative;
         }
-        
+
         &:hover .mz-sitenav-sub {
             visibility: visible;
             .transition-delay(0s);
@@ -54,12 +62,17 @@
         }
     }
 
-    .mz-sitenav-item:hover > .mz-sitenav-link, .mz-sitenav-link.is-current {
-        background-color: #eee;
-        color: @textColor;
-        &:visited {
-            color: @textColor;
-        }
+    .mz-sitenav-link:hover {
+        color: #bf351f;
+    }
+
+    .mz-sitenav-link.is-current {
+        // background-color: #eee;
+        // color: @textColor;
+        color: @redingtonRed;
+        // &:visited {
+        //     color: @textColor;
+        // }
     }
 
     .mz-sitenav-item:hover .mz-sitenav-sub .mz-sitenav-link {
@@ -69,29 +82,37 @@
     }
 
     .mz-sitenav-link {
-        color: #eeeeee;
+        color: #f9f9f2;
         text-decoration: none;
         display: inline-block;
-        padding: 10px @gutter*.75;//@gutter*.325;
-        font-size: @fontSize;
+        // padding: 10px @gutter*.75;//@gutter*.325;
+        // font-size: @fontSize;
+        margin: 0 13px;
+        font-size: 20px;
         position: relative;
-        &:visited {
-            color: #eeeeee;
-        }
+        -webkit-transition: color, 300ms;
+        -moz-transition: color, 300ms;
+        transition: color, 300ms;
+        // &:visited {
+        //     color: #eeeeee;
+        // }
+    }
+    a[href*="rods"] {
+        margin-left: 0;
     }
 
-    @media only screen {
-        @media (max-width: 800px) {
-            height: auto;
-            > .mz-sitenav-list {
-                display: block;
-            }
-            .mz-sitenav-item {
-                display: inline-block;
-            }
-            .mz-sitenav-sub, .mz-sitenav-item-more {
-                display: none;
-            }
-        }
-    }
+    // @media only screen {
+    //     @media (max-width: 800px) {
+    //         height: auto;
+    //         > .mz-sitenav-list {
+    //             display: block;
+    //         }
+    //         .mz-sitenav-item {
+    //             display: inline-block;
+    //         }
+    //         .mz-sitenav-sub, .mz-sitenav-item-more {
+    //             display: none;
+    //         }
+    //     }
+    // }
 }

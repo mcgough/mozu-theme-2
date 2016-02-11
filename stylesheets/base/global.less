@@ -5,15 +5,21 @@ html {
 body {
     margin: 0 auto;
     height: 100%;
-    // background-color: @bodyBackgroundColor;
-	  font-family: @fontFamily;
+    background-color: @redingtonRed;
+    font-family: PBook,"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size: @fontSize;
-	  color: @textColor;
+    color: @textColor;
+}
+h1 {
+  font-size: 48px;
 }
 h1, h2, h3, h4, h5, h6 {
     color: @textColor;
+    text-transform: uppercase;
+    font-family: PNMedium,"Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 a {
+    font-family: PNMedium,"Helvetica Neue",Helvetica,Arial,sans-serif;
     color: @linkColor;
     &:visited {
         color: @linkVisitedColor;
@@ -21,10 +27,15 @@ a {
     &:hover {
         color: @linkHoverColor;
     }
+    -webkit-tap-highlight-color: rgba(207, 124, 112, 0.5);
 }
 
 p {
     margin: @gutter/2 0;
+    font-family: PBook, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.mobile {
+  display: none;
 }
 
 // preventing FOUT since web fonts are loading asynchronously
@@ -59,6 +70,7 @@ input[type="color"],
   padding: 4px 6px;
   margin-bottom: 9px;
   font-family: @fontFamily;
+  text-transform: uppercase;
 }
 
 // Reset appearance properties for textual inputs and textarea
@@ -145,14 +157,39 @@ button {
 }
 
 .mz-page-headernote {
-    margin-left: 133px;
-	font-weight: normal;
+  margin-left: 133px;
+  font-weight: normal;
 }
 
 .mz-auxiliary-text {
-	font-size: 12px;
+  font-size: 12px;
 }
 
 .mz-strikethrough {
-	text-decoration: line-through;
+  text-decoration: line-through;
+}
+
+.mz-pagetitle {
+  font-weight: normal;
+}
+#page-wrapper {
+  background: white;
+}
+.button {
+  display: inline-block;
+  padding: 10px 15px;
+  background: #fff;
+  border: 1px solid #d51e00;
+  color: #d51e00;
+  font-size: 18px;
+  text-transform: uppercase;
+  text-decoration: none;
+  -webkit-transition: all 0.35s ease-in-out;
+  -moz-transition: all 0.35s ease-in-out;
+  transition: all 0.35s ease-in-out;
+  font-family: PNRegular, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  &:hover {
+    background: @redingtonRed;
+    color: #fff;
+  }
 }

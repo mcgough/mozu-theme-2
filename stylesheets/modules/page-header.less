@@ -2,20 +2,31 @@
 @headerBaseline: 66px;
 @searchBoxHeight: 28px;
 @utilityNavHeight: @headerBaseline - (@gutter / 2) - @searchBoxHeight;
-
+#header-wrapper {
+    background: rgba(0,0,0,0.8);
+    height: 90px;
+}
 .mz-pageheader {
     position: relative;
-    height: 154px;
-    background: #eee;
+    height: 90px;
+    max-width: 1012px;
+    margin: auto;
+    width: 90%;
     &.mz-pageheader-hasbanner {
-        background: #eee url('{{ themeSettings.bannerImage }}') {{ themeSettings.bannerImageRepeat }};
+        background: rgba(0, 0, 0, 0.8) url('{{themeSettings.bannerImage}}') {{ themeSettings.bannerImageRepeat }};
     }
-    padding: @gutter/2 @gutter 0;
+    // padding: @gutter/2 @gutter 0;
 
     .mz-storebranding {
-        position: absolute;
-        left: @gutter;
-        top: @headerBaseline - @storeBrandingFontSize - 2;
+        // position: absolute;
+        // left: @gutter;
+        // top: @headerBaseline - @storeBrandingFontSize - 2;
+        a #main_logo {
+            background: url("https://cdn-sb.mozu.com/15185-m1/cms/files/f3b723f1-68d2-4135-adfb-a23832ab0b98") no-repeat 0px 0px transparent;
+            width: 188px;
+            height: 32px;
+            margin-left: -20px;
+        }
     }
 
     &.mz-pageheader-hasbanner .mz-storebranding {
@@ -25,35 +36,41 @@
     .mz-utilitynav {
         position: absolute;
         top: @gutter/2;
-        right: @gutter;
+        right: 0;
         height: @utilityNavHeight;
     }
 
     .mz-searchbox {
-        position: absolute;
-        top: @utilityNavHeight + ( @gutter / 2 );
-        right: @gutter;
+        z-index: 100;
+        visibility: hidden;
+        position: relative;
+        // top: @utilityNavHeight + ( @gutter / 2 );
+        // right: @gutter;
+        bottom: 27px;
+        // -webkit-transition: bottom 0.35s ease-in-out;
+        // -moz-transition: bottom 0.35s ease-in-out;
+        // transition: bottom 0.35s ease-in-out;
     }
 
-    @media only screen {
-        @media (max-width: 768px) {
-            height: auto;
-            .mz-storebranding, .mz-searchbox, .mz-utilitynav {
-                position: relative;
-                margin-bottom: 10px;
-                clear: both;
-                top: 0;
-                left: 0;
-                right: 0;
-                bottom: 0;
-            }
+    // @media only screen {
+    //     @media (max-width: 768px) {
+    //         height: auto;
+    //         .mz-storebranding, .mz-searchbox, .mz-utilitynav {
+    //             position: relative;
+    //             margin-bottom: 10px;
+    //             clear: both;
+    //             top: 0;
+    //             left: 0;
+    //             right: 0;
+    //             bottom: 0;
+    //         }
 
-            .mz-searchbox-expands .mz-searchbox-input {
-                width: auto;
-                &:focus {
-                    width: auto;
-                }
-            }
-        }
-    }
+    //         .mz-searchbox-expands .mz-searchbox-input {
+    //             width: auto;
+    //             &:focus {
+    //                 width: auto;
+    //             }
+    //         }
+    //     }
+    // }
 }

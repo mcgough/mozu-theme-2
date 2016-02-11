@@ -1,4 +1,20 @@
-﻿.mz-searchbox {
+﻿.header-searchbox-button {
+    z-index: 100;
+    cursor: pointer;
+    display: block;
+    float: right;
+    position: relative;
+    box-sizing: border-box;
+    top: 8px;
+    right: 13px;
+    background: url("https://cdn-sb.mozu.com/15185-m1/cms/files/f3b723f1-68d2-4135-adfb-a23832ab0b98") no-repeat -22px -33px transparent;
+    width: 17px;
+    height: 17px;
+    text-indent: -9999px;
+    border: none;
+}
+
+.mz-searchbox {
 
     @expandedSearchWidth: 320px;
 
@@ -6,16 +22,34 @@
         display: inline-block;
         position: relative;
         border: 1px solid @inputBorder;
-        background: white;
-        height: 28px;
-    }
-
-    &.mz-searchbox-expands .mz-searchbox-input {
-        .transition(~"width 0.5s ease");
-        &:focus {
-            width: @expandedSearchWidth;
+        background: rgba(0, 0, 0, 0.75);
+        height: 50px;
+        max-width: 1012px;
+        width: 100%;
+        color: white;
+        -webkit-font-smoothing: antialiased !important;
+        -webkit-text-size-adjust: 100%;
+        text-rendering: optimizeLegibility !important;
+        font-weight: normal;
+        -moz-osx-font-smoothing: grayscale;
+        border: 0;
+        border-radius: 0;
+        color: #202020;
+        font-size: 20px;
+        font-family: PNMedium, "Helvetica Neue", Helvetica, Arial, sans-serif;
+        .twitter-typeahead {
+            max-width: 1012px !important;
+            width: 100% !important;
+            background: rgba(0,0,0,0.75) !important;
         }
     }
+
+    // &.mz-searchbox-expands .mz-searchbox-input {
+    //     .transition(~"width 0.5s ease");
+    //     &:focus {
+    //         width: @expandedSearchWidth;
+    //     }
+    // }
 
     .mz-searchbox-input {
         display: block;
@@ -33,21 +67,35 @@
             outline-width: 0;
         }
     }
+    .mz-searchbox-input.tt-input {
+        width: 100%;
+        height: 50px;
+        background: rgba(0, 0, 0, 0.75) !important;
+        -webkit-font-smoothing: antialiased !important;
+        -webkit-text-size-adjust: 100%;
+        text-rendering: optimizeLegibility !important;
+        font-weight: normal;
+        -moz-osx-font-smoothing: grayscale;
+        border: 0;
+        border-radius: 0;
+        color: #202020;
+        font-size: 20px;
+        &:focus {
+            color: white
+        }
+    }
 
     .mz-searchbox-button {
         display: block;
         position: absolute;
         box-sizing: border-box;
-        top: 0;
-        right: 0;
-	    width: 38px;
-	    height: 28px;
-        margin-left: -1em;
-        background: white url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAOCAIAAACU32q7AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyRpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoTWFjaW50b3NoKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo5MkU2NUE3OTM4MDgxMUUyQjBERkIxNENFRjZCQUNDNyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo5MkU2NUE3QTM4MDgxMUUyQjBERkIxNENFRjZCQUNDNyI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjkyRTY1QTc3MzgwODExRTJCMERGQjE0Q0VGNkJBQ0M3IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjkyRTY1QTc4MzgwODExRTJCMERGQjE0Q0VGNkJBQ0M3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+R/0/oAAAAM9JREFUeNqMka0OhTAMhRnZFGZmBgwGj8fM8NQ8AgbDDAYDZgYDhiVwLiNlucn9OaJpT791zcaO44g+C13GGA+tfd/btp2myZd5npdlyTlnNAlE0zTrukop0zSd53lZFuR1XT9Q3/fGmKIocNo7mDqOI8qY7rLWIhJBOfw4+kMPlCQJ4jAM5HRdh6iUunfC3djA99QlewmLa61fUEiEAlpVlRCC41WIQI1ziNu2YQYS73M8RkigR/s9i2dZJi4R8fYtiOz7392TnHM/oVOAAQCgUmrcU3eBIAAAAABJRU5ErkJggg==) no-repeat 50% 50%;
-	    text-indent: -999em;
-	    border-width: 0;
-        border-radius: 0;
-        padding: 0;
+        top: 15px;
+        right: 20px;
+        background: url("../resources/images/sprite-sheets/redington-sprite-sheet.png") no-repeat -22px -33px transparent;
+        width: 17px;
+        height: 17px;
+        text-indent: -9999px;
+        border: none;
     }
 
     .mz-searchbox-categories {
@@ -95,4 +143,9 @@
 
 
 
+}
+
+.open-search {
+    bottom: -22px !important;
+    visibility: visible !important;
 }

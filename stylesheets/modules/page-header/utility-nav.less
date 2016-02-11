@@ -1,21 +1,48 @@
 ﻿.mz-utilitynav {
     color: @textColor;
-    font-size: @fontSizeSmall;
+    // font-size: @fontSizeSmall;
+    font-size: 18px;
+    min-width: 263px;
 
     .mz-utilitynav-item {
         float: left;
         margin: 0;
-        padding: 0 10px;
+        padding: 0;
         text-align: right;
+        color: #f9f9f2;
+        font-size: 18px;
 
-        &:last-child {
-            padding-right: 0;
-            text-align: right;
-        }
+        // &:last-child {
+        //     padding-right: 0;
+        //     text-align: right;
+        // }
     }
 
     .mz-utilitynav-link {
-        .permalink(@textColor);
+        // .permalink(@textColor);
+        color: #f9f9f2;
+        text-decoration: none;
+        -webkit-transition: color, 300ms;
+        -moz-transition: color, 300ms;
+        transition: color, 300ms;
+        &:hover {
+            color: @redingtonRed;
+        }
     }
 
+
+}
+.mz-utilitynav-cart {
+    float: right;
+    .mz-utilitynav-link-cart {
+
+        &:before {
+            content: "\00a0";
+            display: inline-block;
+            background: url("https://cdn-sb.mozu.com/15185-m1/cms/files/f3b723f1-68d2-4135-adfb-a23832ab0b98") no-repeat 0px -33px transparent;
+            width: 21px;
+            height: 21px;
+            margin: 0 5px 0 0;
+        }
+    }
 }

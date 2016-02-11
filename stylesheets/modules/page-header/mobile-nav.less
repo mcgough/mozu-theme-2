@@ -1,0 +1,67 @@
+#mobile-header.mobile {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 20px 0 0;
+  text-align: center;
+  overflow: hidden;
+  width: 100%;
+}
+
+.mobile .logo {
+  display: inline-block;
+  position: relative;
+  top: -8px;
+}
+.mobile .logo a #main_logo {
+  display: block;
+  background: url("https://cdn-sb.mozu.com/15185-m1/cms/files/f3b723f1-68d2-4135-adfb-a23832ab0b98");
+  width: 188px;
+  height: 32px;
+}
+.mobile .hamburger {
+  width: 30px;
+  float: left;
+  margin: 0 0 0 20px;
+
+  span {
+    display: block;
+    background: white;
+    width: 100%;
+    height: 3px;
+    margin: 0 0 5px 0;
+  }
+}
+.mobile .cart {
+  margin-right: 20px;
+  float: right;
+  color: #c6c6bb;
+  text-decoration: none;
+  span {
+    &:before {
+        content: "\00a0";
+        display: inline-block;
+        background: url("https://cdn-sb.mozu.com/15185-m1/cms/files/f3b723f1-68d2-4135-adfb-a23832ab0b98") no-repeat 0px -33px transparent;
+        width: 21px;
+        height: 21px;
+        margin: 0 5px 0 0;
+    }
+  }
+}
+
+
+
+
+@media screen and (max-width: 604px) {
+  .non-mobile {
+    display: none;
+  }
+  .mobile {
+    display: block;
+  }
+}

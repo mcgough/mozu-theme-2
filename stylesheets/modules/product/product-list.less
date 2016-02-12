@@ -1,8 +1,36 @@
 ﻿.mz-productlist {
+    position: relative;
+    float: right;
+    width: 85%;
+    overflow: hidden;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0 0 20px 0;
+    text-align: center;
+
     &-tiled {
         .mz-productlist-item {
-            min-height: @productTileHeight;
-            width: @productTileWidth;
+            display: inline-block;
+            overflow: hidden;
+            text-decoration: none;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            width: 222px;
+            height: 420px;
+            margin: 0 0 40px 61px;
+            padding: 0 5px 0 5px;
+            border: 1px solid transparent;
+            -webkit-transition: border 0.1s linear;
+            -moz-transition: border 0.1s linear;
+            transition: border 0.1s linear;
+            .mz-productlisting-image a img{
+                display: block;
+                width: 190px;
+                height: 275px;
+                margin: 0 auto 20px auto;
+            }
         }
     }
 }

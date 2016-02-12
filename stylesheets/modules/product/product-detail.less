@@ -1,6 +1,43 @@
 ﻿.mz-productdetail {
     overflow: auto;
-
+    .tech-callout {
+        display: block;
+        width: 100%;
+        text-align: center;
+        line-height: 35px;
+        padding: 2px 0 0 0;
+        margin: 0 0 20px 0;
+        font-size: 18px;
+        font-family: PNRegular, "Helvetica Neue", Helvetica, Arial, sans-serif;
+        text-transform: uppercase;
+        -webkit-font-smoothing: antialiased !important;
+        -webkit-text-size-adjust: 100%;
+        text-rendering: optimizeLegibility !important;
+        font-weight: normal;
+        -moz-osx-font-smoothing: grayscale;
+        color: #bf351f;
+        border-top: 1px solid #ccc;
+        border-bottom: 1px solid #ccc;
+        -webkit-transition: color 300ms ease-in;
+        -moz-transition: color 300ms ease-in;
+        transition: color 300ms ease-in;
+        -webkit-transition: border-color 300ms ease-in;
+        -moz-transition: border-color 300ms ease-in;
+        transition: border-color 300ms ease-in;
+        &:hover {
+            color: #932918;
+            border-color: #932918;
+        }
+    }
+    .mz-productdetail-shortdesc {
+        margin: 35px 0 20px;
+        color: #454545;
+        line-height: 1.5;
+        span {
+            font-family: Museo300, "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 14px;
+        }
+    }
     .mz-productdetail-qty {
         width: 75px;
         display: inline-block;

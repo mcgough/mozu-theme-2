@@ -17,7 +17,7 @@
 	</script>
 {% endif %}
 
-
+{% comment %}
 {% if model.facets %}
 	<div data-mz-facets class="mz-l-sidebar">
 		{% dropzone "sidebar-above-facets" scope="template" %}
@@ -42,12 +42,13 @@
 		</div>
 	</div>
 
+{% endcomment %}
 
 	<div data-mz-productlist class="mz-l-paginatedlist-list">
 			{% include "modules/product/product-list-tiled" %}
 	</div>
 
-
+	{% comment %}
 	<div class="mz-l-paginatedlist-footer">
 		<div data-mz-pagenumbers class="mz-pagenumbers">
 			{% include "modules/common/page-numbers" %}
@@ -57,4 +58,5 @@
 			{% include "modules/common/paging-controls" %}
 		</div>
 	</div>
+	{% endcomment %}
 </div>

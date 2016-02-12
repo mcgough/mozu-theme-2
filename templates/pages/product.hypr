@@ -13,20 +13,22 @@
   {% preload_json model "product" %}
 
   <div itemscope itemtype="http://schema.org/Product" class="mz-l-container">
+    <div class="right-content">
+    	<h1 class="mz-pagetitle" itemprop="name">{{ model.content.productName }}</h1>
+      <div class="mz-productdetail-wrap">
+        {% include "modules/common/message-bar" %}
 
-  	<h1 class="mz-pagetitle" itemprop="name">{{ model.content.productName }}</h1>
-
-    <div data-mz-productimages class="mz-productimages mz-l-sidebar">
-      {% include "modules/product/product-images" %}
-    </div>
-
-    <div class="mz-productdetail-wrap">
-      {% include "modules/common/message-bar" %}
-
-      <div id="product-detail" class="mz-productdetail mz-l-stack">
-        {% include "modules/product/product-detail" %}
+        <div id="product-detail" class="mz-productdetail mz-l-stack">
+          {% include "modules/product/product-detail" %}
+        </div>
       </div>
     </div>
+    <div class="left-content">
+      <div data-mz-productimages class="mz-productimages mz-l-sidebar">
+        {% include "modules/product/product-images" %}
+      </div>
+    </div>
+
 
   </div>
 

@@ -23,7 +23,7 @@
 	        </li>
 	        <li class='mz-utilitynav-item divider'>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</li>
 	        <li class="mz-utilitynav-item">
-	            <a href="//{{ domainName }}/user/signup" data-mz-action="signup" data-placement="bottom" class="mz-utilitynav-link">{{ labels.signUp }}</a>
+	            <a href="//{{ domainName }}/user/signup" data-mz-action="signup" data-placement="bottom" class="mz-utilitynav-link">{{ labels.register }}</a>
 	        </li>
 	        {% endif %}
 	    </ul>

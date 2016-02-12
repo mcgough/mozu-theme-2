@@ -17,7 +17,7 @@
 	<div class="mz-productlisting-info">
 		<a class="mz-productlisting-title" href="{% make_url "product" model %}">{{ model.content.productName }}</a>
 			{% if model.content.productShortDescription and themeSettings.listProductShortDesc %}
-				<p class="mz-productlisting-shortdesc">{{ model.content.productShortDescription|truncatewords(themeSettings.maxProductSummaryWords)|safe }}</p>
+				<p class="mz-productlisting-shortdesc">{{ model.content.productShortDescription|truncatewords(10)|safe }}</p>
 			{% endif %}
 
     	{% block product-code %}

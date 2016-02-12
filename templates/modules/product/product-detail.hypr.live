@@ -1,13 +1,14 @@
 {% if model.content.productShortDescription and themeSettings.showProductDetailShortDesc %}
 	<div class="mz-productdetail-shortdesc mz-l-stack-section">
 
-		<h4 class="mz-l-stack-sectiontitle">{{ labels.shortDesc }}</h4>
+		{# <h4 class="mz-l-stack-sectiontitle">{{ labels.shortDesc }}</h4> #}
 
 		<span itemscope="description">{{ model.content.productShortDescription|safe }}</span>
 	</div>
+	<a href="#tech" class="tech-callout">LOOK CLOSER</a>
 {% endif %}
 
-
+{% comment %}
 {% if model.options and model.options.length > 0 %}
 	<div class="mz-productdetail-options mz-l-stack-section">
 
@@ -16,7 +17,14 @@
 		{% include "modules/product/product-options" %}
 	</div>
 {% endif %}
+{% endcomment %}
 
+<div class="mz-productdetail-fulldesc mz-l-stack-section">
+
+	<h4 class="mz-l-stack-sectiontitle">{{ labels.fullDesc }}</h4>
+
+	{{ model.content.productFullDescription|safe }}
+</div>
 
 <div itemprop="offers" itemscope itemtype="http://schema.org/Offer" class="mz-productdetail-price mz-l-stack-section">
 	<h4 class="mz-l-stack-sectiontitle">{{ labels.price }}</h4>
@@ -81,12 +89,6 @@
 </section>
 
 
-<div class="mz-productdetail-fulldesc mz-l-stack-section">
-
-	<h4 class="mz-l-stack-sectiontitle">{{ labels.fullDesc }}</h4>
-
-	{{ model.content.productFullDescription|safe }}
-</div>
 
 
 {% if model.productUsage == 'Bundle' %}

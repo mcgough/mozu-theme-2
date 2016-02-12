@@ -42,9 +42,9 @@
       100
     ],
     "showMSRP": true,
-    "showProductDetailMeasurements": true,
+    "showProductDetailMeasurements": false,
     "showProductDetailMfgPartNumber": true,
-    "showProductDetailProperties": true,
+    "showProductDetailProperties": false,
     "showProductDetailShortDesc": true,
     "showProductDetailUPC": true,
     "productImagesContainerWidth": 350,

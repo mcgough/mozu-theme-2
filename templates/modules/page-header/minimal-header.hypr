@@ -1,7 +1,7 @@
 <div class="minimal non-mobile">
   <nav class="mz-sitenav">
     <div id="logo">
-      <a href="/" title="Redington"><img id="main_logo" alt="Redington Logo" src="../resources/images/sprite-sheets/spacer.gif"></a>
+      <a href="/" title="Redington"><img id="main_logo" alt="Redington Logo" src="../../resources/images/sprite-sheets/spacer.gif"></a>
     </div>
     <ul class="mz-sitenav-list"
         data-mz-contextify='.mz-sitenav-link[href="{{ navigation.currentNode.url }}"]'

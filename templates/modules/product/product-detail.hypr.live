@@ -5,35 +5,37 @@
 
 		<span itemscope="description">{{ model.content.productShortDescription|safe }}</span>
 	</div>
+	{# !!!!!!!!!!!!!!! Need to make dynamic relative to product !!!!!!!!!!!!!!!!!!!!! #}
 	<a href="#tech" class="tech-callout">LOOK CLOSER</a>
 {% endif %}
 
-{% comment %}
-{% if model.options and model.options.length > 0 %}
-	<div class="mz-productdetail-options mz-l-stack-section">
 
-		<h4 class="mz-l-stack-sectiontitle">{{ labels.options }}</h4>
-
-		{% include "modules/product/product-options" %}
-	</div>
-{% endif %}
-{% endcomment %}
 
 <div class="mz-productdetail-fulldesc mz-l-stack-section">
 
-	<h4 class="mz-l-stack-sectiontitle">{{ labels.fullDesc }}</h4>
+	{# <h4 class="mz-l-stack-sectiontitle">{{ labels.fullDesc }}</h4> #}
 
 	{{ model.content.productFullDescription|safe }}
+
+	{% if model.options and model.options.length > 0 %}
+		<div class="mz-productdetail-options mz-l-stack-section">
+
+			{# <h4 class="mz-l-stack-sectiontitle">{{ labels.options }}</h4> #}
+
+			{% include "modules/product/product-options" %}
+		</div>
+	{% endif %}
 </div>
 
 <div itemprop="offers" itemscope itemtype="http://schema.org/Offer" class="mz-productdetail-price mz-l-stack-section">
-	<h4 class="mz-l-stack-sectiontitle">{{ labels.price }}</h4>
+	{# <h4 class="mz-l-stack-sectiontitle">{{ labels.price }}</h4> #}
 
 	{% include "modules/product/price-stack" %}
 </div>
 
 
 <dl class="mz-productcodes mz-propertylist mz-pagetitle-note mz-l-stack-section">
+	<h2>{{ model.content.productName }}</h2>
 	<dt class="mz-productcodes-productcode-label">{{ labels.productCode }}</dt>
 	<dd class="mz-productcodes-productcode" itemprop="sku">{{ model.variationProductCode|default(model.productCode) }}</dd>
 
@@ -213,3 +215,4 @@
 		{% endfor %}
 	</div>
 {% endif %}
+{% require_script "modules/product-detail" %}

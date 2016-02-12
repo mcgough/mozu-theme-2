@@ -17,6 +17,7 @@ h1, h2, h3, h4, h5, h6 {
     color: @textColor;
     text-transform: uppercase;
     font-family: PNMedium,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: normal;
 }
 a {
     font-family: PNMedium,"Helvetica Neue",Helvetica,Arial,sans-serif;
@@ -149,6 +150,7 @@ select[size] {
 
 button {
     font-family: @fontFamily;
+    text-transform: uppercase;
 }
 
 // TODO: JBZ: file these
@@ -196,4 +198,12 @@ button {
 }
 .mz-cms-editing .mz-cms-blank-block > div {
   padding-bottom: 68px;
+}
+
+#debug-wrap {
+  background: #fff;
+  textarea {
+    text-transform: lowercase;
+    font-family: monospace;
+  }
 }

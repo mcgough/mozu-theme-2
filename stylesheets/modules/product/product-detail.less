@@ -38,14 +38,132 @@
             font-size: 14px;
         }
     }
+    .mz-productdetail-fulldesc {
+        .product-features {
+            margin: 0 0 40px;
+            padding-left: 15px;
+            list-style: disc;
+            li {
+                padding-left: 10px;
+                font-family: PNMedium, "Helvetica Neue", Helvetica, Arial, sans-serif;
+                font-size: 14px;
+                line-height: 1.7;
+            }
+        }
+        h2 {
+            color: #272727;
+            font-size: 18px;
+            font-family: PNMedium, "Helvetica Neue", Helvetica, Arial, sans-serif;
+            text-transform: uppercase;
+            -webkit-font-smoothing: antialiased !important;
+            -webkit-text-size-adjust: 100%;
+            text-rendering: optimizeLegibility !important;
+            font-weight: normal;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        table {
+            margin: 10px 0;
+            width: 99%;
+            border-collapse: collapse;
+            .prod_model_td, .grid_model {
+                display: none;
+            }
+            th {
+                text-align: left;
+                color: #272727;
+                font-size: 16px;
+                font-family: PNMedium, "Helvetica Neue", Helvetica, Arial, sans-serif;
+                text-transform: uppercase;
+                -webkit-font-smoothing: antialiased !important;
+                -webkit-text-size-adjust: 100%;
+                text-rendering: optimizeLegibility !important;
+                font-weight: normal;
+                -moz-osx-font-smoothing: grayscale;
+                padding: 0 5px 20px 5px;
+                vertical-align: bottom;
+                &:last-child {
+                    text-align: right;
+                }
+            }
+            td {
+                text-align: left;
+                &:last-child {
+                    text-align: right;
+                }
+                font-size: 14px;
+                font-family: PBook;
+                -webkit-font-smoothing: antialiased !important;
+                -webkit-text-size-adjust: 100%;
+                text-rendering: optimizeLegibility !important;
+                -moz-osx-font-smoothing: grayscale;
+                font-weight: normal;
+                padding: 0 5px;
+                color: #272727;
+            }
+        }
+        tbody {
+            tr {
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+                overflow: hidden;
+                border: 1px solid transparent;
+                td:last-child {
+                    color: #272727;
+                    font-size: 14px;
+                    font-family: PNMedium;
+
+                }
+                height: 25px;
+                line-height: 25px;
+                &:hover, &.active {
+                    background: #f3f3f3;
+                    cursor: pointer;
+                    border-left: 1px solid #c5c5c5;
+                    border-right: 1px solid #c5c5c5;
+                    td {
+                        border-top: 1px solid #c5c5c5;
+                        border-bottom: 1px solid #c5c5c5;
+                    }
+                }
+                &.active {
+                    background: @redingtonRed;
+                    border-color: transparent;
+                    td {
+                        color: white;
+                        border-color: transparent;
+                    }
+                }
+            }
+        }
+
+
+    }
     .mz-productdetail-qty {
         width: 75px;
         display: inline-block;
         margin-right: @gutter;
     }
-
-    .mz-price {
-        font-size: @fontSizeLarge;
+    .mz-productdetail-price {
+        float: right;
+        width: 30%;
+        text-align: right;
+        clear: none;
+        .mz-price {
+            font-size: 24px;
+            text-align: right;
+            color: #cf1c00;
+            border-top: 1px solid transparent;
+        }
+    }
+    .mz-productcodes {
+        float: left;
+        width: 65%;
+        clear: none;
+        h2 {
+            margin: 0;
+        }
     }
 
     .mz-price-msrp {
@@ -64,7 +182,9 @@
     }
 
     .mz-productdetail-conversion {
+        float: right;
         .clearfix();
+
     }
 
     .mz-productdetail-conversion-controls,
@@ -74,8 +194,23 @@
     }
 
         .mz-productdetail-conversion-buttons .mz-button {
-            display: block;
-            margin: 0 0 @gutter/2;
+            display: inline-block;
+            padding: 10px 15px;
+            background: #fff;
+            border: 1px solid #d51e00;
+            color: #d51e00;
+            font-size: 18px;
+            text-transform: uppercase;
+            text-decoration: none;
+            -webkit-transition: all 0.35s ease-in-out;
+            -moz-transition: all 0.35s ease-in-out;
+            transition: all 0.35s ease-in-out;
+            font-family: PNRegular, "Helvetica Neue", Helvetica, Arial, sans-serif;
+            border-radius: 0;
+            &:hover {
+                background: #d51e00;
+                color: #fff;
+            }
         }
 
     .mz-productbundle-measurements-product {

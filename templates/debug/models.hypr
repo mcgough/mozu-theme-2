@@ -4,6 +4,7 @@
 {% with pageContext.isDebugMode as debugMode %}
 {% with pageContext.pageType as pageType %}
 
+  <div id="debug-wrap">
     <label for="debug-pageModel">
       <code>{{ pageType }} pageModel:&nbsp;</code>
       <textarea rows="1" id="debug-pageModel" name="debug-pageModel">{% json_attribute pageModel %}
@@ -63,6 +64,6 @@
     {% preload_json user            "user" %}
     {% preload_json themeSettings   "themeSettings" %}
     {% preload_json labels          "labels" %}
-
+  </div>
 {% endwith %}
 {% endwith %}

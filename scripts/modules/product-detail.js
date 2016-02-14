@@ -1,15 +1,22 @@
-require(['modules/jquery-mozu'],function($){
-  var $rows = $('.mz-productdetail-fulldesc table tr');
+define(['modules/jquery-mozu'], function($) {
+
+  var options = $('.mz-productoptions-option option');
+  var $rows = $('.mz-productdetail-fulldesc tbody tr');
   var $prodCode = $('.mz-productcodes-productcode');
   var $sku;
   var isActive;
-  $rows.on('click',function(){
+
+  $(document).on('click', '.mz-productdetail-fulldesc tbody tr', function() {
     isActive = $('tr.active');
-    if(isActive.length) {
+    if(isActive.length > 0) {
       isActive.removeClass('active');
     }
     $(this).addClass('active');
     $sku = ($(this).children().eq(0).text());
-    $prodCode.text($sku);
+    console.log($sku);
+    // $prodCode.text($sku);
   });
+
+  console.log(options);
+
 });

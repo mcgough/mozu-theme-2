@@ -5,20 +5,20 @@
 
 		<span itemscope="description">{{ model.content.productShortDescription|safe }}</span>
 	</div>
-	{# !!!!!!!!!!!!!!! Need to make dynamic relative to product !!!!!!!!!!!!!!!!!!!!! #}
+	{# !!!!!!!!!!!!!!! Need to make dynamic relative to product via property or attribute !!!!!!!!!!!!!!!!!!!!! #}
 	<a href="#tech" class="tech-callout">LOOK CLOSER</a>
 {% endif %}
 
 <div class="mz-productdetail-fulldesc mz-l-stack-section">
 	{# <h4 class="mz-l-stack-sectiontitle">{{ labels.fullDesc }}</h4> #}
 	{{ model.content.productFullDescription|safe }}
-	{% if model.options and model.options.length > 0 %}
-		<div class="mz-productdetail-options mz-l-stack-section">
-			{# <h4 class="mz-l-stack-sectiontitle">{{ labels.options }}</h4> #}
-			{% include "modules/product/product-options" %}
-		</div>
-	{% endif %}
 </div>
+{% if model.options and model.options.length > 0 %}
+	<div class="mz-productdetail-options mz-l-stack-section">
+		{# <h4 class="mz-l-stack-sectiontitle">{{ labels.options }}</h4> #}
+		{% include "modules/product/product-options" %}
+	</div>
+{% endif %}
 
 <div itemprop="offers" itemscope itemtype="http://schema.org/Offer" class="mz-productdetail-price mz-l-stack-section">
 	{# <h4 class="mz-l-stack-sectiontitle">{{ labels.price }}</h4> #}
@@ -70,7 +70,6 @@
 			</form>
 		{% endif %}
 	</div>
-
 
 	{% if not model.purchasableState.isPurchasable %}
 		<p class="mz-productdetail-notpurchasable">

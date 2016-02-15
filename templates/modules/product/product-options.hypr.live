@@ -1,18 +1,26 @@
 <div class="mz-productoptions">
 		{% for option in model.options %}
 		<div class="mz-productoptions-optioncontainer">
+				{% comment %}
 				{% if option.isRequired %}
 						<strong class="is-required">*</strong>
 				{% endif %}
 				<label class="mz-productoptions-optionlabel">{{ option.attributeDetail.name }}</label>
+				{% endcomment %}
 				<div class="mz-productoptions-valuecontainer">
 						{% if option.attributeDetail.inputType == "List" %}
-							{% if option.attributeDetail.name == "redington rod models" %}
-								<select style="display:none" {% if option.isMultiValue %}multiple{% endif %} class="mz-productoptions-option" data-mz-product-option="{{ option.attributeFQN }}">
-										{% if not option.isMultiValue %}<option></option>{% endif %}
-										{% for value in option.values %}
-										<option {% if not value.isEnabled %} class="is-disabled" {% endif %} {% if value.isSelected %}selected="true"{% endif %} value="{{ value.value }}">{{ value.stringValue|default(value.value)}}{% if value.deltaPrice and value.deltaPrice > 0 %} ( {{ value.deltaPrice|currency }} {{ labels.more }} ){% endif %}</option>
-										{% endfor %}
+							{% if model.productType == "Redington Rod" %}
+								<select {% if option.isMultiValue %}multiple{% endif %} class="mz-productoptions-option" data-mz-product-option="{{ option.attributeFQN }}">
+									{% if not option.isMultiValue %}<option></option>{% endif %}
+									{% for value in option.values %}
+										{% with forloop.index as index %}
+											{% for variation in model.variations %}
+												{% if index == forloop.index %}
+													<option {% if not value.isEnabled %} class="is-disabled" {% endif %} {% if value.isSelected %}selected="true"{% endif %} sku="{{ variation.productCode }}" value="{{ value.value }}">{{ value.stringValue|default(value.value)}}{% if value.deltaPrice and value.deltaPrice > 0 %} ( {{ value.deltaPrice|currency }} {{ labels.more }} ){% endif %}</option>
+												{% endif %}
+											{% endfor %}
+										{% endwith %}
+									{% endfor %}
 								</select>
 							{% else %}
 								<select {% if option.isMultiValue %}multiple{% endif %} class="mz-productoptions-option" data-mz-product-option="{{ option.attributeFQN }}">

@@ -4,9 +4,11 @@
 </figure>
 <figure class="mz-productimages-thumbs">
 		{% for image in model.content.productImages %}
+    {% if image.altText != "Tech Callout" %}
 		<a class="mz-productimages-thumb" data-mz-productimage-thumb="{{ image.sequence }}" href="{% make_url "image" image %}">
 				<img class="mz-productimages-thumbimage"  src="{% make_url "image" image with max=themeSettings.maxProductImageThumbnailSize as_parameters %}" {% if image.altText %}alt="{{ image.altText }}"{% endif %} />
 		</a>
+    {% endif %}
 		{% endfor %}
 </figure>
 {% else %}

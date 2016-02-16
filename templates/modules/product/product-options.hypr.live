@@ -10,7 +10,7 @@
 				<div class="mz-productoptions-valuecontainer">
 						{% if option.attributeDetail.inputType == "List" %}
 							{% if model.productType == "Redington Rod" %}
-								<select {% if option.isMultiValue %}multiple{% endif %} class="mz-productoptions-option" data-mz-product-option="{{ option.attributeFQN }}">
+								<select style="display: none;" {% if option.isMultiValue %}multiple{% endif %} class="mz-productoptions-option" data-mz-product-option="{{ option.attributeFQN }}">
 									{% if not option.isMultiValue %}<option></option>{% endif %}
 									{% for value in option.values %}
 										{% with forloop.index as index %}

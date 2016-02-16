@@ -1,18 +1,4 @@
-{% if model.content.productShortDescription and themeSettings.showProductDetailShortDesc %}
-	<div class="mz-productdetail-shortdesc mz-l-stack-section">
 
-		{# <h4 class="mz-l-stack-sectiontitle">{{ labels.shortDesc }}</h4> #}
-
-		<span itemscope="description">{{ model.content.productShortDescription|safe }}</span>
-	</div>
-	{# !!!!!!!!!!!!!!! Need to make dynamic relative to product via property or attribute !!!!!!!!!!!!!!!!!!!!! #}
-	<a href="#tech" class="tech-callout">LOOK CLOSER</a>
-{% endif %}
-
-<div class="mz-productdetail-fulldesc mz-l-stack-section">
-	{# <h4 class="mz-l-stack-sectiontitle">{{ labels.fullDesc }}</h4> #}
-	{{ model.content.productFullDescription|safe }}
-</div>
 {% if model.options and model.options.length > 0 %}
 	<div class="mz-productdetail-options mz-l-stack-section">
 		{# <h4 class="mz-l-stack-sectiontitle">{{ labels.options }}</h4> #}
@@ -28,8 +14,8 @@
 
 <dl class="mz-productcodes mz-propertylist mz-pagetitle-note mz-l-stack-section">
 	<h2>{{ model.content.productName }}</h2>
-	<dt class="mz-productcodes-productcode-label">{{ labels.productCode }}</dt>
-	<dd class="mz-productcodes-productcode" itemprop="sku">{{ model.variationProductCode|default(model.productCode) }}</dd>
+	<dt class="mz-productcodes-productcode-label">item#</dt>
+	<dd class="mz-productcodes-productcode" itemprop="sku">{{ model.variationProductCode|default("") }}</dd>
 
 	{% if themeSettings.showProductDetailMfgPartNumber and model.mfgPartNumber.length == 1 %}
 		<dt class="mz-productcodes-mfgpartnumber-label">{{ labels.mfgPartNumber }}</dt>

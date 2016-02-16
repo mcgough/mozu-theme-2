@@ -1,0 +1,17 @@
+{% if model.content.productShortDescription and themeSettings.showProductDetailShortDesc %}
+  <div class="mz-productdetail-shortdesc mz-l-stack-section">
+    {# <h4 class="mz-l-stack-sectiontitle">{{ labels.shortDesc }}</h4> #}
+    <span itemscope="description">{{ model.content.productShortDescription|safe }}</span>
+  </div>
+{% endif %}
+
+{% for property in model.properties %}
+  {% if property.attributeDetail.name == "Tech Callout" %}
+    <a href="#tech" class="tech-callout">LOOK CLOSER</a>
+  {% endif %}
+{% endfor %}
+
+<div class="mz-productdetail-fulldesc mz-l-stack-section">
+  {# <h4 class="mz-l-stack-sectiontitle">{{ labels.fullDesc }}</h4> #}
+  {{ model.content.productFullDescription|safe }}
+</div>

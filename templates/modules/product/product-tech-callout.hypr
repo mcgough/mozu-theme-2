@@ -1,0 +1,15 @@
+{% for property in model.properties %}
+  {% if property.attributeDetail.name == "Tech Callout" %}
+    {% for value in property.values %}
+      {% if value.value == true %}
+        <section id="tech">
+          {% for image in model.content.productImages %}
+            {% if image.altText == "Tech Callout" %}
+              <img src="{{ image.src }}" alt="product features">
+            {% endif %}
+          {% endfor %}
+        </section>
+      {% endif %}
+    {% endfor %}
+  {% endif %}
+{% endfor %}

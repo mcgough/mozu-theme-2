@@ -1,0 +1,6 @@
+<div class="social" data-image="{{ model.mainImage.src }}" data-title="Redington {{ model.content.productName }}" data-description="{{ model.content.productShortDescription }}">
+  <a href="#" class="social-icon facebook ir">facebook</a>
+  <a href="#" class="social-icon twitter ir">twitter</a>
+  <a href="#" class="social-icon pinterest ir">pinterest</a>
+  <a href="#" class="social-icon google ir">google+</a>
+</div>

@@ -17,5 +17,5 @@
     {% include "modules/page-header/mobile-nav-links" %}
   {% endblock mobile-nav-links %}
 
-  {% require_script "pages/mobilenav" %}
+  {% require_script "modules/mobilenav" %}
 </div>

@@ -7,7 +7,7 @@
 
 {% for property in model.properties %}
   {% if property.attributeDetail.name == "Tech Callout" %}
-    <a href="#tech" class="tech-callout">LOOK CLOSER</a>
+    <div class="tech-callout">LOOK CLOSER</div>
   {% endif %}
 {% endfor %}
 
@@ -15,3 +15,4 @@
   {# <h4 class="mz-l-stack-sectiontitle">{{ labels.fullDesc }}</h4> #}
   {{ model.content.productFullDescription|safe }}
 </div>
+{% require_script "modules/product-description" %}

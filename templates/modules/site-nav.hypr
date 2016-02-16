@@ -70,7 +70,7 @@
             {% endif %}
             {% endpartial_cache %}
             {% require_script "modules/contextify" %}
-            {% require_script "pages/header" %}
+            {% require_script "modules/header" %}
         </ul>
     </nav>
     {% block minimal %}

@@ -4,3 +4,5 @@
   <a href="#" class="social-icon pinterest ir">pinterest</a>
   <a href="#" class="social-icon google ir">google+</a>
 </div>
+{% require_script "modules/product-social-sdk" %}
+{% require_script "modules/product-social" %}

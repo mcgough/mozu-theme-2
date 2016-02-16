@@ -15,6 +15,7 @@
     <div class="right-content">
       <h1 class="mz-pagetitle" itemprop="name">{{ model.content.productName }}</h1>
       {% include "modules/product/product-social" %}
+      {% include "modules/product/product-awards" %}
       <div class="mz-productdetail-wrap">
         {% include "modules/common/message-bar" %}
         <div id="product-descriptions">

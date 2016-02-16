@@ -1,0 +1,15 @@
+{% for property in model.properties %}
+  {% if property.attributeDetail.name|lower == "redington award" %}
+    <div class="awards">
+      {% for value in property.values %}
+        {% if forloop.first and value.value == true and model.content.productImages.length > 0 %}
+          {% for image in model.content.productImages %}
+            {% if image.altText|lower == "award" %}
+              <img width="60" height="60" src="{{ image.src }}" alt="{{ image.altText }}">
+            {% endif %}
+          {% endfor %}
+        {% endif %}
+      {% endfor %}
+    </div>
+  {% endif %}
+{% endfor %}

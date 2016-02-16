@@ -1,10 +1,10 @@
 {% for property in model.properties %}
-  {% if property.attributeDetail.name == "Tech Callout" %}
+  {% if property.attributeDetail.name|lower == "tech callout" %}
     {% for value in property.values %}
       {% if value.value == true %}
         <section id="tech">
           {% for image in model.content.productImages %}
-            {% if image.altText == "Tech Callout" %}
+            {% if image.altText|lower == "tech callout" %}
               <img src="{{ image.src }}" alt="product features">
             {% endif %}
           {% endfor %}
